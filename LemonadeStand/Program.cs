@@ -22,7 +22,30 @@
             {
                 player.DisplayStatus();
                 player.DisplayOptions();
-                break;
+                
+
+                int choice = UserInterface.GetNumberOfItems("Enter your choice: ");
+
+                switch (choice)
+                {
+
+                    case 1: store.SellLemons(player); 
+                    break;
+
+                    case 2: store.SellSugarCubes(player); 
+                    break;
+
+                    case 3: store.SellIceCubes(player);
+                    break;
+
+                    case 4: store.SellCups(player);
+                    break;
+
+                    
+
+                    default: Console.WriteLine("Not a valid choice. Please select a valid choice.");
+                    break;
+                }
             }
             
            

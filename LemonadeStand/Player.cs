@@ -24,7 +24,7 @@ namespace LemonadeStand
         // member methods (CAN DO)
         public void DisplayStatus()
         {
-            Console.WriteLine("Player Status:");
+            Console.WriteLine("Player Inventory Status:");
             Console.WriteLine($"Money: ${wallet.Money:F2}");
             Console.WriteLine($"Lemons: {inventory.lemons.Count}");
             Console.WriteLine($"Sugar Cubes: {inventory.sugarCubes.Count}");
