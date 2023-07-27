@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            
+            Weather weather = new Weather();
         }
     }
 }
