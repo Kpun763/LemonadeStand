@@ -16,6 +16,15 @@
 
             weather.GenereateForecase();
             weather.DisplayForecast();
+            Console.WriteLine();
+
+            while (true)
+            {
+                player.DisplayStatus();
+                break;
+            }
+            
+           
         }
     }
 }

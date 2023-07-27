@@ -22,6 +22,16 @@ namespace LemonadeStand
         }
 
         // member methods (CAN DO)
+        public void DisplayStatus()
+        {
+            Console.WriteLine("Player Status:");
+            Console.WriteLine($"Money: ${wallet.Money:F2}");
+            Console.WriteLine($"Lemons: {inventory.lemons.Count}");
+            Console.WriteLine($"Sugar Cubes: {inventory.sugarCubes.Count}");
+            Console.WriteLine($"Ice Cubes: {inventory.iceCubes.Count}");
+            Console.WriteLine($"Cups: {inventory.cups.Count}");
+            Console.WriteLine();
 
+        }
     }
 }
