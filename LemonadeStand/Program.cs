@@ -46,6 +46,12 @@
                     default: Console.WriteLine("Not a valid choice. Please select a valid choice.");
                     break;
                 }
+
+                if (!UserInterface.AskYesNo("Do you want to continue shopping for items? (y/n:)"));
+                {
+                    Console.WriteLine("Okay. Thanks for shopping!");
+                    break;
+                }
             }
             
            

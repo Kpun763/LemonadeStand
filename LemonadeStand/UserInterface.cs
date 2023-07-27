@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace LemonadeStand
@@ -38,6 +39,21 @@ namespace LemonadeStand
             }
 
             return quantityOfItem;
+        }
+
+        public static bool AskYesNo(string promt)
+        {
+            while (true)
+            {
+                Console.WriteLine(promt);
+                string response = Console.ReadLine().Trim().ToLower();
+
+                if (response == "y" || response == "yes")
+                    return true;
+                else if (response == "n" || response == "no")
+                    return false;
+                Console.WriteLine("Not a valid response. Please enter 'y' for Yes or 'n' for No.");
+            }
         }
 
     }
