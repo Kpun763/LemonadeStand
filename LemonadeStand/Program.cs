@@ -21,6 +21,7 @@
             while (true)
             {
                 player.DisplayStatus();
+                player.DisplayOptions();
                 break;
             }
             

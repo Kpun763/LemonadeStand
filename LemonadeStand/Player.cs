@@ -33,5 +33,15 @@ namespace LemonadeStand
             Console.WriteLine();
 
         }
+        public void DisplayOptions()
+        {
+            Console.WriteLine("Select Options");
+            Console.WriteLine();
+            Console.WriteLine("1. Go to store to buy lemons");
+            Console.WriteLine("2. Go to store to buy sugare cubes");
+            Console.WriteLine("3. Go to store to buy ice cubes");
+            Console.WriteLine("4. Go to store to buy cups");
+
+        }
     }
 }
