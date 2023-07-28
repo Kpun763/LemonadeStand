@@ -50,9 +50,14 @@
                 if (!UserInterface.AskYesNo("Do you want to continue shopping for items? (y/n:)"));
                 {
                     Console.WriteLine("Okay. Thanks for shopping!");
-                    break;
+                    Console.WriteLine("Lets set the lemonade prices.");
+
+
+                    Console.WriteLine("Enter the price for a cup of lemonade:");
+                    double lemonadePrice = UserInterface.GetPricePerCup();
                 }
             }
+            
             
            
         }
