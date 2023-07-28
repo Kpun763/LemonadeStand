@@ -58,22 +58,29 @@ namespace LemonadeStand
 
         public static double GetPricePerCup()
         {
-            bool userInputisDouble = false;
-            double pricePerCup = 0;
+            bool validInput = false;
+            double pricePerCup = -1 ; //Used a negative so the price of the lemonade could also be something like .75
 
-            while (!userInputisDouble || pricePerCup <= 0)
+            while (!validInput)
             {
                 Console.WriteLine("Please enter the price for each cup of lemonade (dollars):");
-                userInputisDouble = double.TryParse(Console.ReadLine(), out pricePerCup);
-
-                if (userInputisDouble || pricePerCup <= 0)
+                if (Double.TryParse(Console.ReadLine(),out pricePerCup))
                 {
-                    Console.WriteLine("Not a valid Input. Please use a positive number to set the price.");
+                    if (pricePerCup >= 0)
+                    {
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a valid Input. Please use a positive number to set the price.");
+                    }
                 }
+              
             }
-
             return pricePerCup;
-        }
+
+
+        }  
 
     }
 }

@@ -23,14 +23,14 @@ namespace LemonadeStand
             WeatherCondition = weatherCondition[randomIndex];
         }
 
-        public void DisplayForecast()
+        public void DisplayForecast() //I created to display forecast
         {
             Console.WriteLine($"The Forecast for today is:");
             Console.WriteLine($"Temperature: {Temperature} {(char)176}F");
             Console.WriteLine($"Condition: {WeatherCondition}");
         }
         
-        public Weather GetWeatherForecast()
+        public Weather GetWeatherForecast() //I created to help determine the demand for the lemonade
         {
             Random random = new Random();
             string[] weatherConditions = { "Sunny", "Partly Cloudy", "Scattered Thunderstorms" };

@@ -60,7 +60,7 @@
                     Console.WriteLine("How many pitchers of lemonade will you make?");
                     int numberofPitchers = UserInterface.GetNumberOfPitchers();
 
-                    int demand = store.CalculateDemand(lemonadePrice, forecast);
+                    
                 }
             }
             
