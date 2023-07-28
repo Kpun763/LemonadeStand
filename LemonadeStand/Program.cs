@@ -14,7 +14,7 @@
 
             Weather weather = new Weather();
 
-            weather.GenereateForecase();
+            weather.GenereateForecast();
             weather.DisplayForecast();
             Console.WriteLine();
 
@@ -60,7 +60,7 @@
                     Console.WriteLine("How many pitchers of lemonade will you make?");
                     int numberofPitchers = UserInterface.GetNumberOfPitchers();
 
-                    int demand = store.Calu
+                    int demand = store.CalculateDemand(lemonadePrice, forecast);
                 }
             }
             
