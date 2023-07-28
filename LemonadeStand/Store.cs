@@ -78,5 +78,14 @@ namespace LemonadeStand
         {
             wallet.PayMoneyForItems(transactionAmount);
         }
+
+        public int CalculateDemand(double lemonadePrice, Weather weather)
+        {
+            double demand = 100 - (lemonadePrice * 20) + (weather.Temperature * 2);
+
+            demand = Math.Max(0,Math.Min(100, demand));
+
+            return(int)Math.Round(demand);
+        }
     }
 }

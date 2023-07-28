@@ -52,9 +52,15 @@
                     Console.WriteLine("Okay. Thanks for shopping!");
                     Console.WriteLine("Lets set the lemonade prices.");
 
-
+                    //Setting price for lemonade
                     Console.WriteLine("Enter the price for a cup of lemonade:");
                     double lemonadePrice = UserInterface.GetPricePerCup();
+
+                    //Make lemonade
+                    Console.WriteLine("How many pitchers of lemonade will you make?");
+                    int numberofPitchers = UserInterface.GetNumberOfPitchers();
+
+                    int demand = store.Calu
                 }
             }
             
