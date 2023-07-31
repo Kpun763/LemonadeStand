@@ -81,11 +81,29 @@ namespace LemonadeStand
 
         public int CalculateDemand(double lemonadePrice, Weather weather)
         {
-            double demand = 100 - (lemonadePrice * 20) + (weather.Temperature * 2);
+            int demand = 100 - (int) (lemonadePrice * 20) + (weather.Temperature * 2);
 
             demand = Math.Max(0,Math.Min(100, demand));
 
-            return(int)Math.Round(demand);
+            return demand;
+        }
+
+        public double PriceAdjustBasedOnDemand(double lemonadePrice, int demand)
+        {
+            if (demand >= 80)
+            {
+                lemonadePrice -= 0.25;
+            }
+            else if (demand < 50)
+            {
+               lemonadePrice += 0.25;
+            }
+            
+            if (lemonadePrice < 0)
+            {
+                lemonadePrice = 0;
+            }
+            return lemonadePrice;
         }
     }
 }
