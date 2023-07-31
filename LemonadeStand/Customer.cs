@@ -10,5 +10,11 @@ namespace LemonadeStand
     {
         public double BuyingChance { get; set; }
         public int MaxBuyingAmount { get; set; }
+
+        public void BuyingBehavior(double buyingChance, int maxBuyingAmount)
+        {
+            BuyingChance = buyingChance;
+            MaxBuyingAmount = maxBuyingAmount;
+        }
     }
 }

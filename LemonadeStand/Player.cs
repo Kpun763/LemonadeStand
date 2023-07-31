@@ -13,6 +13,7 @@ namespace LemonadeStand
         public Wallet wallet;
         public Recipe recipe;
         public double LemonadePrice;
+        public List<Customer> Customers { get; private set; }
 
         // constructor (SPAWNER)
         public Player()
@@ -21,6 +22,18 @@ namespace LemonadeStand
             wallet = new Wallet();
             recipe = new Recipe();
             LemonadePrice = 0.50;
+
+            Customers = new List<Customer>();
+            Customer customer1 = new Customer();
+            customer1.BuyingBehavior(0.6, 4);
+            Customers.Add(customer1);
+
+            Customer customer2 = new Customer();
+            customer2.BuyingBehavior(0.4, 3);
+            Customers.Add(customer2);
+            
+            Customer customer3 = new Customer();
+            customer3.BuyingBehavior(0.5,2);
         }
 
         // member methods (CAN DO)
