@@ -17,6 +17,9 @@ namespace LemonadeStand
         public int PitchersMade { get; set; }
         public int CupsSold { get; set; }  
 
+        public double DailyProfitLoss { get; set; }
+        public double TotalProfitLoss { get; set; }
+
         // constructor (SPAWNER)
         public Player()
         {
@@ -34,7 +37,9 @@ namespace LemonadeStand
             
             Customer customer3 = new Customer(0.5,2);
             Customers.Add(customer3);
-           
+
+            DailyProfitLoss = 0.0;
+            TotalProfitLoss = 0.0;
         }
 
         // member methods (CAN DO)
@@ -58,6 +63,12 @@ namespace LemonadeStand
             Console.WriteLine("3. Go to store to buy ice cubes");
             Console.WriteLine("4. Go to store to buy cups");
 
+        }
+
+        public void UpdateTotalProfitLoss()
+        {
+            TotalProfitLoss += DailyProfitLoss;
+            DailyProfitLoss = 0.0;
         }
     }
 }
