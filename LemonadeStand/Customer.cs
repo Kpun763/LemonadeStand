@@ -15,13 +15,14 @@ namespace LemonadeStand
         {
             BuyingChance = buyingChance;
             MaxBuyingAmount = maxBuyingAmount;
+            
         }
 
-        public static List<Customer> GenerateCustomers(int numberOfCustomers)
+        public static List<Customer> GenerateCustomers(int numberOfCustomers, Random random)
         {
             List<Customer> customers = new List<Customer>();
 
-            Random random = new Random();
+            
             for(int i = 0; i < numberOfCustomers; i++)
             {
                 double buyingChance = random.NextDouble();

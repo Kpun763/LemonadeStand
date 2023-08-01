@@ -17,11 +17,15 @@ namespace LemonadeStand
             Console.WriteLine("Welcome to Kyle's Lemonade Stand");
             Console.WriteLine();
 
+            
+            Random random = new Random();
+            
 
             int currentDay = 1;
             int totalDays = 7;
 
-          
+            List<Customer> customers = Customer.GenerateCustomers(3, random);
+
             while (currentDay <= totalDays)
             {
 
@@ -98,8 +102,8 @@ namespace LemonadeStand
                 {
                     Console.WriteLine("Invalid option. Please select a valid option.");
                 }
-                List<Customer> customers = Customer.GenerateCustomers(2);
-                Random random = new Random();
+
+              
 
                 foreach (Customer customer in customers)
                 {
@@ -129,17 +133,6 @@ namespace LemonadeStand
                 }
 
 
-               
-                if (UserInterface.AskYesNo("Do you want to begin selling lemonade? (y/n:)"))
-                {
-                    int pitchersToMake = UserInterface.GetNumberOfPitchers();
-
-                  
-                
-                }
-
-                
-
                 if (!UserInterface.AskYesNo("Do you want to continue shopping for items? (y/n:)")) 
                 {
                     Console.WriteLine("Okay. Thanks for shopping!");
@@ -147,8 +140,7 @@ namespace LemonadeStand
 
                     //Setting price for lemonade
                     Console.WriteLine("Enter the price for a cup of lemonade:");
-                    double lemonadePrice = UserInterface.GetPricePerCup();
-                 
+               
                 }
 
                 currentDay++;
