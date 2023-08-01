@@ -12,7 +12,8 @@ namespace LemonadeStand
         public int Temperature { get; set; }
         public string WeatherCondition { get; set; }
 
-        public void GenereateForecast()
+        private static readonly Random random = new Random();   
+        public void GenerateForecast()
         {
             Random random = new Random();
             Temperature = random.Next(50, 90); //This is random temperature between 50 degrees Fahreheit to 89 degrees Fahrenheit
@@ -30,12 +31,13 @@ namespace LemonadeStand
             Console.WriteLine($"Condition: {WeatherCondition}");
         }
         
-        public Weather GetWeatherForecast() //I created to help determine the demand for the lemonade
+        public static Weather GetWeatherForecast() //I created to help determine the demand for the lemonade
         {
-            Random random = new Random();
+           
             string[] weatherConditions = { "Sunny", "Partly Cloudy", "Scattered Thunderstorms" };
             int temperature = random.Next(50, 90); //This is random temperature between 50 degrees Fahreheit to 89 degrees Fahrenheit
-            string condition = weatherConditions[random.Next(weatherConditions.Length)];
+            int randomIndex = random.Next(weatherConditions.Length);
+            string condition = weatherConditions[randomIndex];
             
             return new Weather { Temperature = temperature, WeatherCondition = condition }; 
         }

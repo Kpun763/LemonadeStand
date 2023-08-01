@@ -16,14 +16,22 @@
             Console.WriteLine();
 
 
+            int currentDay = 1;
+            int totalDays = 7;
 
-
-            while (true)
+          
+            while (currentDay <= totalDays)
             {
-                Weather forecast = weatherForecast.GetWeatherForecast();
-                Console.WriteLine($"Here is the forecast for today: {forecast.WeatherCondition}, {forecast.Temperature}{(char)176}F");
 
-                int demand = store.CalculateDemand(player.LemonadePrice, forecast);
+                Console.WriteLine($"... Day {currentDay} ...");
+
+                weatherForecast.GenerateForecast();
+
+                weatherForecast.DisplayForecast();
+
+                Console.WriteLine($"Here is the forecast for today: {weatherForecast.WeatherCondition}, {weatherForecast.Temperature}{(char)176}F");
+
+                int demand = store.CalculateDemand(player.LemonadePrice, weatherForecast);
                 player.LemonadePrice = store.PriceAdjustBasedOnDemand(player.LemonadePrice, demand);
                 Console.WriteLine($"The current price per cup: ${player.LemonadePrice:F2}");
 
@@ -76,6 +84,11 @@
 
                                 player.PitchersMade++;
                             }
+                            else
+                            {
+                                Console.WriteLine("You don't have enough items to make a pitcher of lemonade.");
+                                break;
+                            }
                         }
                     }
                 }
@@ -99,10 +112,15 @@
 
                     //Setting price for lemonade
                     Console.WriteLine("Enter the price for a cup of lemonade:");
+                    double lemonadePrice = UserInterface.GetPricePerCup();
                  
                 }
 
+                currentDay++;
+
             }
+
+            Console.WriteLine("That is the end of the game.");
 
 
 
