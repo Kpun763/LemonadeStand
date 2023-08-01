@@ -103,7 +103,7 @@ namespace LemonadeStand
                     Console.WriteLine("Invalid option. Please select a valid option.");
                 }
 
-              
+                double moneyEarned = 0.0;
 
                 foreach (Customer customer in customers)
                 {
@@ -117,6 +117,7 @@ namespace LemonadeStand
                             player.inventory.RemoveCups(cupsBought);
                             player.wallet.PayMoneyForItems(transactionAmount);
                             Console.WriteLine($"Customer bought {cupsBought} cups of lemonade for ${transactionAmount:F2}");
+                            moneyEarned += transactionAmount;
                         }
 
                         else
@@ -131,7 +132,7 @@ namespace LemonadeStand
                 
                     
                 }
-
+                Console.WriteLine($"Daily profit or loss: ${moneyEarned:F2}");
 
                 if (!UserInterface.AskYesNo("Do you want to continue shopping for items? (y/n:)")) 
                 {
