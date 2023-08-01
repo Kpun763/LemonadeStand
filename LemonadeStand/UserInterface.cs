@@ -16,7 +16,7 @@ namespace LemonadeStand
 
             while (!userInputIsAnInteger || quantityOfItem < 0)
             {
-                Console.WriteLine("How many " + itemsToGet + " would you like to buy?");
+                Console.WriteLine($"How many {itemsToGet} would you like to buy?");
                 Console.WriteLine("Please enter a positive integer (or 0 to cancel):");
 
                 userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
@@ -41,11 +41,11 @@ namespace LemonadeStand
             return quantityOfItem;
         }
 
-        public static bool AskYesNo(string promt)
+        public static bool AskYesNo(string prompt)
         {
             while (true)
             {
-                Console.WriteLine(promt);
+                Console.WriteLine(prompt);
                 string response = Console.ReadLine().Trim().ToLower();
 
                 if (response == "y" || response == "yes")

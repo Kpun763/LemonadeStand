@@ -13,7 +13,7 @@ namespace LemonadeStand
         public int numberOfSugarCubes;
         public int numberOfIceCubes;
         public double price;
-
+        public int cupsPerPitcher;
 
         // constructor (SPAWNER)
         public Recipe()
@@ -22,6 +22,7 @@ namespace LemonadeStand
             numberOfSugarCubes = 4;
             numberOfIceCubes = 10;
             price = 1;
+            cupsPerPitcher = 5;
         }
 
         //Member Methods (CAN DO)

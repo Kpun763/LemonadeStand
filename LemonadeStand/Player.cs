@@ -13,7 +13,9 @@ namespace LemonadeStand
         public Wallet wallet;
         public Recipe recipe;
         public double LemonadePrice;
-        public List<Customer> Customers { get; private set; }
+        public List<Customer> Customers { get; set; }
+        public int PitchersMade { get; set; }
+        public int CupsSold { get; set; }  
 
         // constructor (SPAWNER)
         public Player()
@@ -21,7 +23,7 @@ namespace LemonadeStand
             inventory = new Inventory();
             wallet = new Wallet();
             recipe = new Recipe();
-            LemonadePrice = 0.50;
+            LemonadePrice = 1;
 
             Customers = new List<Customer>();
             Customer customer1 = new Customer();
