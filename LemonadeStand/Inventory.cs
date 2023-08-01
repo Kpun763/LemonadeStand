@@ -64,6 +64,52 @@ namespace LemonadeStand
             }
         }
 
+        public void RemoveLemons(int count)
+        {
+            if (lemons.Count >= count)
+            {
+                lemons.RemoveRange(0, count);
+            }
+            else
+            {
+                Console.WriteLine("Not enough lemons in your inventory.");
+            }
+        }
 
+        public void RemoveSugarCubes(int count)
+        {
+            if (sugarCubes.Count >= count)
+            {
+                sugarCubes.RemoveRange(0, count);
+            }
+            else
+            {
+                Console.WriteLine("Not enough sugar cubes in your inventory.");
+            }
+        }
+
+        public void RemoveIceCubes(int count)
+        {
+            if (iceCubes.Count >= count)
+            {
+                iceCubes.RemoveRange(0,count);
+            }
+            else
+            {
+                Console.WriteLine("Not enough ice cubes in your inventory.");
+            }
+        }
+
+        public void RemoveCups(int count)
+        {
+            if (cups.Count >= count)
+            {
+                cups.RemoveRange(0, count);
+            }
+            else
+            {
+                Console.WriteLine("Not enough cups in your inventory.");
+            }
+        }
     }
 }

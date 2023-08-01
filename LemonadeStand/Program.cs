@@ -59,6 +59,24 @@
                     {
                         int pitchersToMake = UserInterface.GetNumberOfPitchers();
                         double lemonadePrice = UserInterface.GetPricePerCup();
+
+                        for (int i=0; i<pitchersToMake; i++)
+                        {
+                            int cupsInPitcher = 8;
+
+                            if (player.inventory.lemons.Count >= cupsInPitcher && 
+                                player.inventory.sugarCubes.Count >= cupsInPitcher && 
+                                player.inventory.iceCubes.Count >= cupsInPitcher && 
+                                player.inventory.cups.Count >= cupsInPitcher)
+                            {
+                                player.inventory.RemoveLemons(cupsInPitcher);
+                                player.inventory.RemoveSugarCubes(cupsInPitcher);
+                                player.inventory.RemoveIceCubes(cupsInPitcher);
+                                player.inventory.RemoveCups(cupsInPitcher);
+
+                                player.PitchersMade++;
+                            }
+                        }
                     }
                 }
                 else
