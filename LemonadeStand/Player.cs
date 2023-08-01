@@ -26,16 +26,15 @@ namespace LemonadeStand
             LemonadePrice = 1;
 
             Customers = new List<Customer>();
-            Customer customer1 = new Customer();
-            customer1.BuyingBehavior(0.6, 4);
+            Customer customer1 = new Customer(0.6,4);
             Customers.Add(customer1);
 
-            Customer customer2 = new Customer();
-            customer2.BuyingBehavior(0.4, 3);
+            Customer customer2 = new Customer(0.4,3);
             Customers.Add(customer2);
             
-            Customer customer3 = new Customer();
-            customer3.BuyingBehavior(0.5,2);
+            Customer customer3 = new Customer(0.5,2);
+            Customers.Add(customer3);
+           
         }
 
         // member methods (CAN DO)

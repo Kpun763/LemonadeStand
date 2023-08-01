@@ -1,4 +1,6 @@
-﻿namespace LemonadeStand
+﻿using System.ComponentModel.Design;
+
+namespace LemonadeStand
 {
     internal class Program
     {
@@ -68,7 +70,7 @@
                         int pitchersToMake = UserInterface.GetNumberOfPitchers();
                         double lemonadePrice = UserInterface.GetPricePerCup();
 
-                        for (int i=0; i<pitchersToMake; i++)
+                        for (int i=0; i < pitchersToMake; i++)
                         {
                             int cupsInPitcher = 8;
 
@@ -96,10 +98,43 @@
                 {
                     Console.WriteLine("Invalid option. Please select a valid option.");
                 }
+                List<Customer> customers = Customer.GenerateCustomers(2);
+                Random random = new Random();
+
+                foreach (Customer customer in customers)
+                {
+                    if (customer.WillBuyLemonade(player.LemonadePrice))
+                    {
+                        int cupsBought = random.Next(1, customer.MaxBuyingAmount + 1);
+                        double transactionAmount = cupsBought * player.LemonadePrice;
+
+                        if (cupsBought <= player.inventory.cups.Count)
+                        {
+                            player.inventory.RemoveCups(cupsBought);
+                            player.wallet.PayMoneyForItems(transactionAmount);
+                            Console.WriteLine($"Customer bought {cupsBought} cups of lemonade for ${transactionAmount:F2}");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("You do not have enough cups to complete this customers order.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Customer did not buy any lemonade");
+                    }
+                
+                    
+                }
+
+
                
                 if (UserInterface.AskYesNo("Do you want to begin selling lemonade? (y/n:)"))
                 {
                     int pitchersToMake = UserInterface.GetNumberOfPitchers();
+
+                  
                 
                 }
 
